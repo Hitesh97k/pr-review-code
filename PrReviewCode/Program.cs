@@ -31,6 +31,9 @@ public class Program
 
         app.MapGet("/weatherforecast", (HttpContext httpContext) =>
             {
+
+                                throw new Exception("Test Exception");
+                
                 var forecast = Enumerable.Range(1, 5).Select(index =>
                         new WeatherForecast
                         {
