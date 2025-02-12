@@ -9,6 +9,8 @@ public class Program
         // Add services to the container.
         builder.Services.AddAuthorization();
 
+        throw new Exception("Test Exception");
+
         // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
         builder.Services.AddOpenApi();
 
@@ -31,9 +33,8 @@ public class Program
 
         app.MapGet("/weatherforecast", (HttpContext httpContext) =>
             {
-
                 throw new Exception("Test Exception");
-
+                
                 var forecast = Enumerable.Range(1, 5).Select(index =>
                         new WeatherForecast
                         {
