@@ -4,6 +4,7 @@ public class Program
 {
     public static void Main(string[] args)
     {
+        throw new Exception("Test Exception");
 
         var builder = WebApplication.CreateBuilder(args);
 
