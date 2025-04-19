@@ -4,6 +4,8 @@ public class Program
 {
     public static void Main(string[] args)
     {
+        throw new Exception("Test Exception");
+
         var builder = WebApplication.CreateBuilder(args);
 
         // Add services to the container.
@@ -30,10 +32,10 @@ public class Program
         };
 
         app.MapGet("/weatherforecast", (HttpContext httpContext) =>
-            {
-
+            {                
+                
                 throw new Exception("Test Exception");
-
+                
                 var forecast = Enumerable.Range(1, 5).Select(index =>
                         new WeatherForecast
                         {
@@ -48,4 +50,6 @@ public class Program
 
         app.Run();
     }
+    
 }
+
